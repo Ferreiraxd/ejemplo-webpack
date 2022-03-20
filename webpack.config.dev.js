@@ -14,11 +14,11 @@ module.exports = {
         clean: true
     },
     mode: 'development',
-    watch: true,
+    /*watch: true,
     watchOptions:{
         aggregateTimeout: 200,
         ignored: /node_modules/
-    },
+    },*/
     resolve: {
         extensions: ['.js'],
         alias: {
@@ -82,5 +82,10 @@ module.exports = {
         }),
         new Dotenv(),
         new ProgressPlugin(true)
-    ]
+    ],
+    devServer:{
+        compress: true,
+        historyApiFallback: true,
+        port: 3005
+    }
 }
